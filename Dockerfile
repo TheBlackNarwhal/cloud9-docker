@@ -7,13 +7,13 @@ MAINTAINER Kevin Delfour <kevin@delfour.eu>
 
 # ------------------------------------------------------------------------------
 # Install base
-RUN apt-get update
-RUN apt-get install -y build-essential g++ curl libssl-dev apache2-utils git libxml2-dev sshfs
+RUN apt-get update && \
+    apt-get install -y build-essential g++ curl libssl-dev apache2-utils git libxml2-dev sshfs
 
 # ------------------------------------------------------------------------------
 # Install Node.js
-RUN curl -sL https://deb.nodesource.com/setup_5.x | bash -
-RUN apt-get install -y nodejs
+RUN curl -sL https://deb.nodesource.com/setup_5.x | bash - && \
+    apt-get install -y nodejs
     
 # ------------------------------------------------------------------------------
 # Install Cloud9
